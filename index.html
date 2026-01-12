@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer & Search</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .card { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, button, textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        button { background-color: #007bff; color: white; border: none; cursor: pointer; margin-top: 15px; }
+        button:hover { background-color: #0056b3; }
+        .result-item { background: #f9f9f9; padding: 10px; margin-top: 10px; border-left: 4px solid #007bff; }
+        .score { float: right; font-weight: bold; color: green; }
+    </style>
+</head>
+<body>
+    <h1>Resume Analyzer AI [Cite: Node Backend]</h1>
+
+    <div class="card">
+        <h2>1. Upload Resume</h2>
+        <form id="uploadForm">
+            <label>Candidate Name:</label>
+            <input type="text" id="name" required placeholder="John Doe">
+            
+            <label>Email:</label>
+            <input type="email" id="email" required placeholder="john@example.com">
+            
+            <label>Resume File (PDF/DOCX/TXT):</label>
+            <input type="file" id="file" required>
+            
+            <button type="submit">Upload & Analyze</button>
+        </form>
+        <div id="uploadStatus"></div>
+    </div>
+
+    <div class="card">
+        <h2>2. Search Candidates</h2>
+        <label>Job Description / Search Query:</label>
+        <textarea id="searchQuery" rows="4" placeholder="Looking for a React developer with 5 years experience..."></textarea>
+        <button onclick="searchResumes()">Search Database</button>
+        
+        <div id="searchResults"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
